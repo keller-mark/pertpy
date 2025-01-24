@@ -39,7 +39,7 @@ from pertpy.tools._perturbation_space._simple import (
     KMeansSpace,
     PseudobulkSpace,
 )
-from pertpy.tools._scgen import Scgen
+#from pertpy.tools._scgen import Scgen
 
 CODA_EXTRAS = ["toytree", "arviz", "ete3"]  # also pyqt5 technically
 Sccoda = lazy_import("pertpy.tools._coda._sccoda", "Sccoda", CODA_EXTRAS)
@@ -75,5 +75,5 @@ __all__ = [
     "DBSCANSpace",
     "KMeansSpace",
     "PseudobulkSpace",
-    "Scgen",
+    #"Scgen",
 ]
