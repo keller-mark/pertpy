@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-import decoupler as dc
 import matplotlib.pyplot as plt
 import numpy as np
 from anndata import AnnData
@@ -53,6 +52,7 @@ class CentroidSpace(PerturbationSpace):
             >>> cs = pt.tl.CentroidSpace()
             >>> cs_adata = cs.compute(mdata["rna"], target_col="gene_target")
         """
+        import decoupler as dc
 
         X = None
         if layer_key is not None and embedding_key is not None:
@@ -130,6 +130,7 @@ class PseudobulkSpace(PerturbationSpace):
         embedding_key: str = None,
         **kwargs,
     ) -> AnnData:  # type: ignore
+        
         """Determines pseudobulks of an AnnData object. It uses Decoupler implementation.
 
         Args:
@@ -210,6 +211,8 @@ class PseudobulkSpace(PerturbationSpace):
         Preview:
             .. image:: /_static/docstring_previews/pseudobulk_samples.png
         """
+        import decoupler as dc
+        
         fig = dc.plot_psbulk_samples(adata, groupby, return_fig=True, **kwargs)
 
         if show:
