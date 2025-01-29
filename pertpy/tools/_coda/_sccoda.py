@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Literal
 
-import arviz as az
 import jax.numpy as jnp
 import numpy as np
 import numpyro as npy
@@ -18,6 +17,7 @@ from pertpy.tools._coda._base_coda import CompositionalModel2, from_scanpy
 
 if TYPE_CHECKING:
     import pandas as pd
+    import arviz as az
 
 config.update("jax_enable_x64", True)
 
@@ -332,6 +332,7 @@ class Sccoda(CompositionalModel2):
             >>> sccoda.run_nuts(mdata, num_warmup=100, num_samples=1000, rng_key=42)
             >>> arviz_data = sccoda.make_arviz(mdata, num_prior_samples=100)
         """
+        import arviz as az
         if isinstance(data, MuData):
             try:
                 sample_adata = data[modality_key]
