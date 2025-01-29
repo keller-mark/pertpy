@@ -19,9 +19,9 @@ def lazy_import(module_path, class_name, extras):
         return Placeholder
 
 
-from pertpy.tools._augur import Augur
-from pertpy.tools._cinemaot import Cinemaot
-from pertpy.tools._dialogue import Dialogue
+#from pertpy.tools._augur import Augur
+#from pertpy.tools._cinemaot import Cinemaot
+#from pertpy.tools._dialogue import Dialogue
 from pertpy.tools._distances._distance_tests import DistanceTest
 from pertpy.tools._distances._distances import Distance
 from pertpy.tools._enrichment import Enrichment
@@ -53,11 +53,11 @@ TTest = lazy_import("pertpy.tools._differential_gene_expression", "TTest", DE_EX
 WilcoxonTest = lazy_import("pertpy.tools._differential_gene_expression", "WilcoxonTest", DE_EXTRAS)
 
 __all__ = [
-    "Augur",
-    "Cinemaot",
+    #"Augur",
+    #"Cinemaot",
     "Sccoda",
     "Tasccoda",
-    "Dialogue",
+    #"Dialogue",
     "EdgeR",
     "PyDESeq2",
     "WilcoxonTest",
